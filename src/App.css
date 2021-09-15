@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
 .App {
   text-align: center;
 }
@@ -9,7 +11,8 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin 7s;
+    opacity: 1;
   }
 }
 
@@ -21,6 +24,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  font-family: 'Ubuntu', sans-serif;
   color: white;
 }
 
@@ -29,10 +33,55 @@
 }
 
 @keyframes App-logo-spin {
-  from {
+  0%{
     transform: rotate(0deg);
+    opacity: 1;
   }
-  to {
+  80%{
     transform: rotate(360deg);
+    opacity: 0;
   }
 }
+
+h1{
+  animation: fadeIn 7s;
+}
+
+.line-1{
+  position: relative;
+  top: 50%;  
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255,255,255,.75);
+  font-size: 180%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);    
+}
+
+p {
+  max-width: 100%;
+}
+
+.anim-typewriter{
+  animation:
+             typewriter 4s steps(43) 1s 1 normal both,
+             blinkTextCursor 500ms steps(43) infinite normal;
+}
+
+@keyframes fadeIn{
+  0%{opacity:0;}  
+  80%{opacity:0;}
+  100%{opacity:1;}
+  }
+
+
+  @keyframes typewriter{
+    from{width: 0;}
+    to{width: 24em;}
+  }
+  @keyframes blinkTextCursor{
+    from{border-right-color: rgba(255,255,255,.75);}
+    to{border-right-color: transparent;}
+  }
